@@ -1,16 +1,23 @@
 #include <stdio.h>
-void func(int i, int n)
+void func(int n)
 {
     // Base Case
-    if (i == n + 1)
+    if (n == 0)
         return;
-    func(i + 1, n);
-    printf("%d ", i);
+    if (n > 1)
+    {
+        printf("%d ", n);
+    }
+    if (n == 1)
+    {
+        printf("%d", n);
+    }
+    func(n - 1);
 }
 int main()
 {
     int n;
     scanf("%d", &n);
-    func(1, n);
+    func(n);
     return 0;
 }
