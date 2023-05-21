@@ -1,11 +1,16 @@
 #include <stdio.h>
-void func(int arr[],int n, int i)
+void func(int arr[], int n, int i)
 {
     // Base Case
-    if (i == n + 1)
+    if (i == n)
         return;
-    printf("%d ", i);
-    func(arr[],int n, int i);
+    // printf("%d\t", i);
+    // printf("\n");
+    func(arr, n, i + 1);
+    if (i % 2 == 0)
+    {
+        printf("%d ", arr[i]);
+    }
 }
 int main()
 {
@@ -16,7 +21,6 @@ int main()
     {
         scanf("%d", &arr[i]);
     }
-
     func(arr, n, 0);
     return 0;
 }
